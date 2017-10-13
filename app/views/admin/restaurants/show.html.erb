@@ -1,0 +1,8 @@
+<p>Category: <%= @restaurant.category.name %></p>
+<%= @restaurant.name %> Restaurant <br>
+<%= image_tag(@restaurant.image) %> <br>
+Opening Hour:<%= @restaurant.opening_hour %> <br>
+Tel: <%= @restaurant.tel %><br>
+Description:<%= @restaurant.description %><br>
+
+ <%= link_to 'Back to index', :controller => 'admin/restaurants', :action => 'index' %><br>

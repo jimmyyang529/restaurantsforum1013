@@ -1,0 +1,26 @@
+
+
+<ul>
+<%= link_to 'TOP10 Restaurants ', dashboard_restaurants_path %>
+  <% @categories.each do |category| %>     |
+    <%= link_to category_restaurants_path(category) do %>
+      <%= category.name %>
+    <% end %>
+  <% end %>
+</ul>
+
+
+
+
+  <% @restaurants.each do |restaurant| %>
+           <%= render :partial => 'favorites', :locals => { :restaurant => restaurant } %>
+        <%= image_tag(restaurant.image, :width => 250) %>
+
+        <%= restaurant.name %>
+
+        <%= restaurant.description %>
+        <%= link_to 'Show', restaurant_path(restaurant) %><br>
+  <% end %>
+
+
+ <%= paginate @restaurants %>
